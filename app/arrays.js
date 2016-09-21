@@ -26,11 +26,12 @@ exports.arraysAnswers = {
   },
 
   prepend: function(arr, item) {
-
+    var arr1 = [item]
+    return arr1.concat(arr)
   },
 
   curtail: function(arr) {
-
+    return arr.slice(1, arr.length)
   },
 
   concat: function(arr1, arr2) {
@@ -38,11 +39,20 @@ exports.arraysAnswers = {
   },
 
   insert: function(arr, item, index) {
-
+    var item = [item]
+    var inter = arr.slice(0,index).concat(item)
+    return (inter.concat(arr.slice(index, arr.length)))
   },
 
   count: function(arr, item) {
+    var counter = 0
+    for (var i = 0; i < arr.length; i++){
+        if (arr[i] === item){
+            counter += 1
+        }
 
+    }
+    return counter
   },
 
   duplicates: function(arr) {
