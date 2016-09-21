@@ -2,11 +2,11 @@ exports = typeof window === 'undefined' ? global : window;
 
 exports.arraysAnswers = {
   indexOf: function(arr, item) {
-
+    return arr.indexOf(item)
   },
 
   sum: function(arr) {
-
+    return arr.reduce(function(a, b){return a+b})
   },
 
   remove: function(arr, item) {
@@ -18,11 +18,11 @@ exports.arraysAnswers = {
   },
 
   append: function(arr, item) {
-
+    return arr.concat(item)
   },
 
   truncate: function(arr) {
-
+    return arr.slice(0, arr.length - 1)
   },
 
   prepend: function(arr, item) {
@@ -34,7 +34,7 @@ exports.arraysAnswers = {
   },
 
   concat: function(arr1, arr2) {
-
+    return arr1.concat(arr2)
   },
 
   insert: function(arr, item, index) {
@@ -50,7 +50,7 @@ exports.arraysAnswers = {
   },
 
   square: function(arr) {
-
+    return arr.map(a => a*a)
   },
 
   findAllOccurrences: function(arr, target) {
