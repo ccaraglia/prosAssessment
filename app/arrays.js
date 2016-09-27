@@ -10,11 +10,14 @@ exports.arraysAnswers = {
   },
 
   remove: function(arr, item) {
-
+    return arr.filter(a => a!==item)
   },
-
+// NOT SURE AT ALL ABOUT THIS ONE
   removeWithoutCopy: function(arr, item) {
+    var array = arr
 
+    arr = array.filter(a => a!==item)
+    return array
   },
 
   append: function(arr, item) {
@@ -56,7 +59,13 @@ exports.arraysAnswers = {
   },
 
   duplicates: function(arr) {
-
+    var dupl = []
+    for (var i = 0; i < arr.length; i++){
+        if (arr.lastIndexOf(arr[i]) > i && dupl.indexOf(arr[i]) === -1){
+            dupl.push(arr[i])
+        }
+    }
+    return dupl
   },
 
   square: function(arr) {
@@ -64,6 +73,14 @@ exports.arraysAnswers = {
   },
 
   findAllOccurrences: function(arr, target) {
+    var position = []
+    for(var i = 0; i < arr.length; i++){
+        if(arr[i] === target){
+            position.push(i)
+        }
+    }
+    return position
 
-  }
+    }
+
 };
