@@ -16,7 +16,8 @@ exports.regexAnswers = {
   },
 
   endsWithVowel: function(str) {
-    return ( str[str.length-1] === 'a' || str[str.length-1] === 'i' || str[str.length-1] === 'o' ||  str[str.length-1] === 'e' || str[str.length-1] === 'u' )
+    var leng = str.length - 1
+    return ( str[leng] === 'a' || str[leng] === 'e' || str[leng] === 'i' ||  str[leng] === 'o' || str[leng] === 'u' || str[leng] === 'A' || str[leng] === 'E' || str[leng] === 'I' ||  str[leng] === 'O' || str[leng] === 'U')
   },
 
   captureThreeNumbers: function(str) {
@@ -24,6 +25,11 @@ exports.regexAnswers = {
   },
 
   matchesPattern: function(str) {
+    if(str.length === 12 && str[3] === '-' && str[7] ==='-' && !isNaN(str.slice(0,3)) && !isNaN(str.slice(4,7)) && !isNaN(str.slice(8,12))){
+    return true
+}else{
+    return false
+}
 
   },
 
